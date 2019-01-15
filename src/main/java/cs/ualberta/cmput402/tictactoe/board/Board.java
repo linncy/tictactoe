@@ -44,6 +44,7 @@ public class Board {
             throw new InvalidMoveException(stringBuilder.toString());
         }else{
             board[row][col] = currentPlayer;
+            playedMoves += 1;
 
             if (hasWon(row, col))
                 winner = currentPlayer;
