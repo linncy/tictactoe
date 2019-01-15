@@ -50,7 +50,7 @@ public class TicTacToeGame {
         	System.out.println("Player " + board.getWinner() + " has won the game!");	
         }
         else {
-        	System.out.println("The game has ended in a tie");
+        	System.out.println("The game has ended in a tie.");
         }
         
     }
