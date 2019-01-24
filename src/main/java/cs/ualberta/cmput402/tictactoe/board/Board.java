@@ -11,6 +11,7 @@ public class Board {
     private Player currentPlayer;
     private Player winner;
     private Player board[][];
+    public int playedMoves;
 
     public Board(){
         board = new Player[3][3];
@@ -20,10 +21,18 @@ public class Board {
     }
 
     private void initBoard(){
+    	playedMoves = 0;
+
         for (int i = 0; i < 3; i++)
             for(int j = 0; j < 3; j++)
                 board[i][j] = Player.NONE;
 
+    }
+    
+    public void resetGame() {
+    	initBoard();
+    	winner = null;
+    	currentPlayer = Player.X;
     }
 
     public void playMove(int row, int col) throws InvalidMoveException {
@@ -43,6 +52,7 @@ public class Board {
             throw new InvalidMoveException(stringBuilder.toString());
         }else{
             board[row][col] = currentPlayer;
+            playedMoves += 1;
 
             if (hasWon(row, col))
                 winner = currentPlayer;
@@ -91,6 +101,14 @@ public class Board {
         }
 
         return false;
+    }
+    
+    public boolean maxTurns(){
+    	if (playedMoves == 9) {
+    		return true;
+    	}
+    	
+    	return false;
     }
 
     private boolean isOnRightDiag(int col, int row){
