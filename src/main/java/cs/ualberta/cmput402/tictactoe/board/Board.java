@@ -32,6 +32,7 @@ public class Board {
     public void resetGame() {
     	initBoard();
     	winner = null;
+    	currentPlayer = Player.X;
     }
 
     public void playMove(int row, int col) throws InvalidMoveException {
