@@ -55,9 +55,9 @@ public class TicTacToeGame {
 	        	System.out.println("Player " + board.getWinner() + " has won the game!");	
 	        	
 	        	if(Player.X == board.getWinner()) {
-	        		scoreBoard.setXwin();
+	        		scoreBoard.setXWin();
 	        	} else if (Player.O == board.getWinner()) {
-	        		scoreBoard.setOwin();
+	        		scoreBoard.setOWin();
 	        	}
 	        }
 	        else {

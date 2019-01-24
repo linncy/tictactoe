@@ -11,11 +11,11 @@ public class ScoreBoard {
 		tie = 0;
 	}
 	
-	public void setXwin() {
+	public void setXWin() {
 		xWin++;
 	}
 	
-	public void setOwin() {
+	public void setOWin() {
 		oWin++;
 	}
 	
